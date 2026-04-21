@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "io.github.techtastic.simulated_gauges.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MixinAltitudeSensorBlockEntity",
+    "MixinLinkedTypewriterBlockEntity",
+    "MixinNameplateBlockEntity",
+    "MixinNavTableBlockEntity",
+    "MixinVelocitySensorBlockEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
