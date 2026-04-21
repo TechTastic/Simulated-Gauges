@@ -2,17 +2,17 @@ modLoader="javafml" #mandatory
 
 loaderVersion="${loader_version_range}"
 license="${mod_license}"
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+issueTrackerURL="https://github.com/TechTastic/Simulated-Gauges/issues"
 
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-#logoFile="examplemod.png" #optional
+displayURL="https://github.com/TechTastic/Simulated-Gauges"
+logoFile="icon.png"
 authors="TechTastic"
 description='''
-Adding new Gauges for Create: Simulated!
+A Deployer-based addon for Create: Simulated, best used with Extra Gauges!
 '''
 
 [[mixins]]
