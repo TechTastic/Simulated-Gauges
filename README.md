@@ -5,6 +5,7 @@
 
 *Note: This mod is best used alongside [**Create: Extra Gauges**](https://github.com/LIUKRAST/CreateExtraGauges)!*
 
+---
 # List of New Gauges:
 ## Altitude Gauge
 This gauge can read the height of its block in the world OR the air pressure of its position.
@@ -17,6 +18,7 @@ This gauge can read the orientation of its block in the world as Euler Angles se
 It outputs both a String and a Number for the selected axis.
 The values are derived from the orientation quaternion in YXZ rotation order.
 
+---
 # List of supported Blocks:
 ## Altitude Sensor
 This sensor can output its height in the world for Deployer-based gauges.
