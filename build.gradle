@@ -3,6 +3,8 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.141'
     id 'idea'
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
+    id "com.modrinth.minotaur" version "2.9.0"
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -232,5 +234,51 @@ idea {
     module {
         downloadSources = true
         downloadJavadoc = true
+    }
+}
+
+curseforge {
+    if (System.getenv("CURSEFORGE_TOKEN") != null) {
+        apiKey = System.getenv("CURSEFORGE_TOKEN")
+        project {
+            id = curseforge_id
+            releaseType = 'release'
+            changelogType = 'markdown'
+            changelog = rootProject.file("changelog.md").text
+            addGameVersion minecraft_version
+            addGameVersion "NeoForge"
+
+            mainArtifact(jar.archiveFile.get().asFile) {
+                relations {
+                    requiredDependency 'create'
+                    requiredDependency 'deployer'
+                    requiredDependency 'create-aeronautics'
+                    optionalDependency 'create-extra-gauges'
+                }
+                displayName = project.mod_name + ' ' + project.mod_version
+            }
+        }
+        options {
+            forgeGradleIntegration = false
+            javaVersionAutoDetect = false
+        }
+    }
+}
+
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = project.modrinth_id
+    versionType = "release"
+    versionName = project.mod_name + ' ' + project.mod_version
+    versionNumber = project.mod_version
+    uploadFile = jar.archiveFile.get().asFile
+    gameVersions = [project.minecraft_version]
+    loaders = ["neoforge"]
+    changelog = rootProject.file("changelog.md").text
+
+    dependencies {
+        required.project "create"
+        required.project "create-aeronautics"
+        optional.project "extra-gauges"
     }
 }
