@@ -2,7 +2,6 @@ package io.github.techtastic.simulated_gauges.datagen;
 
 import io.github.techtastic.simulated_gauges.registry.ItemsRegistry;
 import net.minecraft.data.PackOutput;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import static io.github.techtastic.simulated_gauges.SimulatedGauges.MOD_ID;
