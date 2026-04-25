@@ -28,10 +28,15 @@ public class MixinNameplateBlockEntity implements IAbstractPanelSupport {
     @Override
     public AbstractPanelSupportBehaviour simulated_gauges$getOrCreateSupport(SmartBlockEntity sbe) {
         if (panelSupport == null) {
-            panelSupport = new AbstractPanelSupportBehaviour(sbe, () -> true, () -> {}) {
+            panelSupport = new AbstractPanelSupportBehaviour(sbe, () -> true, () ->
+                    panelSupport.getConnectionValue(DeployerPanelConnections.STRING.get()).ifPresent(value -> {
+                        if (((NameplateBlockEntity) sbe).allowsEditing())
+                            ((NameplateBlockEntity) sbe).setName(value, true, null);
+                    })
+            ) {
                 @Override
                 public void addConnections(PanelConnectionBuilder builder) {
-                    builder.registerOutput(DeployerPanelConnections.STRING.get(), () -> ((NameplateBlockEntity)sbe).getName());
+                    builder.registerBoth(DeployerPanelConnections.STRING.get(), () -> ((NameplateBlockEntity)sbe).getName());
                 }
             };
         }

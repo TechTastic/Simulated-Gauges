@@ -1,5 +1,6 @@
 package io.github.techtastic.simulated_gauges.mixin;
 
+import com.simibubi.create.content.logistics.factoryBoard.FactoryPanelBehaviour;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import dev.simulated_team.simulated.content.blocks.velocity_sensor.VelocitySensorBlockEntity;
@@ -32,6 +33,13 @@ public class MixinVelocitySensorBlockEntity implements IAbstractPanelSupport {
                 @Override
                 public void addConnections(PanelConnectionBuilder builder) {
                     builder.registerOutput(DeployerPanelConnections.NUMBERS.get(), () -> ((VelocitySensorBlockEntity)sbe).getAdjustedVelocity());
+                    builder.registerOutput(DeployerPanelConnections.STRING.get(), () -> ((VelocitySensorBlockEntity)sbe).getAdjustedVelocity() + "");
+                    builder.registerOutput(DeployerPanelConnections.REDSTONE.get(), () -> ((VelocitySensorBlockEntity)sbe).getRedstoneStrength() > 0);
+                }
+
+                @Override
+                public void connect(FactoryPanelBehaviour panel) {
+                    super.connect(panel);
                 }
             };
         }

@@ -1,0 +1,7 @@
+{
+  "parent": "create:block/factory_gauge/item",
+  "textures": {
+    "0": "simulated_gauges:block/altitude_panel",
+    "particle": "simulated_gauges:block/altitude_panel"
+  }
+}

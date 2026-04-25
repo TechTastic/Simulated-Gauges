@@ -1,0 +1,23 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/velocity_sensor/fan_blades",
+		"particle": "simulated:block/velocity_sensor/fan_blades"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 0, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"east": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"south": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"west": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#0"}
+			}
+		}
+	]
+}

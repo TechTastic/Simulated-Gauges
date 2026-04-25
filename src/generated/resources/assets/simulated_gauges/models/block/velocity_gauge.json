@@ -1,0 +1,7 @@
+{
+  "parent": "deployer:block/template_gauge",
+  "textures": {
+    "particle": "simulated_gauges:block/velocity_panel",
+    "texture": "simulated_gauges:block/velocity_panel"
+  }
+}

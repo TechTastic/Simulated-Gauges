@@ -31,7 +31,9 @@ public class MixinAltitudeSensorBlockEntity implements IAbstractPanelSupport {
             panelSupport = new AbstractPanelSupportBehaviour(sbe, () -> true, () -> {}) {
                 @Override
                 public void addConnections(PanelConnectionBuilder builder) {
-                    builder.registerOutput(DeployerPanelConnections.NUMBERS.get(), () -> ((AltitudeSensorBlockEntity)sbe).getWorldHeight());
+                    builder.registerOutput(DeployerPanelConnections.NUMBERS.get(), () -> ((AltitudeSensorBlockEntity)sbe).getValue());
+                    builder.registerOutput(DeployerPanelConnections.STRING.get(), () -> ((AltitudeSensorBlockEntity)sbe).getValue() + "");
+                    builder.registerOutput(DeployerPanelConnections.REDSTONE.get(), () -> ((AltitudeSensorBlockEntity)sbe).getSignal() > 0);
                 }
             };
         }

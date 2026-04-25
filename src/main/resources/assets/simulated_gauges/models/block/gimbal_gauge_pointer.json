@@ -1,0 +1,23 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "simulated:block/gimbal_sensor/gimbal_sensor",
+		"particle": "simulated:block/gimbal_sensor/gimbal_sensor"
+	},
+	"elements": [
+		{
+			"from": [7.5, 0, 3.5],
+			"to": [8.5, 0, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"east": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"south": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"west": {"uv": [0, 2, 16, 2], "texture": "#missing"},
+				"up": {"uv": [9.5, 4.5, 10, 7.5], "texture": "#0"},
+				"down": {"uv": [10, 7.5, 9.5, 4.5], "texture": "#0"}
+			}
+		}
+	]
+}

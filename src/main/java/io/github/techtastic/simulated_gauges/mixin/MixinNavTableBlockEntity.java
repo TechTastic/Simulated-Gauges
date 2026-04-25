@@ -32,6 +32,7 @@ public class MixinNavTableBlockEntity implements IAbstractPanelSupport {
                 @Override
                 public void addConnections(PanelConnectionBuilder builder) {
                     builder.registerOutput(DeployerPanelConnections.NUMBERS.get(), () -> ((NavTableBlockEntity)sbe).getRelativeAngle());
+                    builder.registerOutput(DeployerPanelConnections.STRING.get(), () -> ((NavTableBlockEntity)sbe).getRelativeAngle() + "");
                 }
             };
         }
